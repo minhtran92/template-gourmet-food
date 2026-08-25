@@ -1,0 +1,28 @@
+{
+  "name": "@g66/template-gourmet-food",
+  "version": "1.0.0",
+  "description": "F&B storefront template for @g66 — warm coffee/wood theme, phone OTP, VNPay/SEPay",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./theme": "./theme.ts",
+    "./sdk-config": "./sdk-config.ts",
+    "./pages": "./pages/index.ts",
+    "./components": "./components/index.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@g66/storefront-sdk": "workspace:*",
+    "@g66/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
