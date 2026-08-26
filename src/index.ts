@@ -1,3 +1,4 @@
+// Export giao diện template (npm package)
+export { GourmetFoodHomePage } from './shop/[slug]/HomePage';
 export { gourmetFoodTheme } from './theme';
-export { GourmetFoodHomePage } from './pages/HomePage';
-export { default as gourmetFoodConfig } from './sdk-config';
+export type { ThemeConfig, HomePageProps } from './theme';

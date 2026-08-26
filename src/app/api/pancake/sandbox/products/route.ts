@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
-// Mock product data for sandbox dev
-const MOCK_PRODUCTS = [
+// Mock F&B products cho sandbox dev
+const PRODUCTS = [
   { id: '1', name: 'Cà phê sữa đá', price: 25000, images: ['https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400'] },
   { id: '2', name: 'Bánh mì thịt nướng', price: 35000, images: ['https://images.unsplash.com/photo-1601524909342-973e8bb0e848?w=400'] },
   { id: '3', name: 'Phở bò', price: 45000, images: ['https://images.unsplash.com/photo-1503764659696-97e8b1c3f3c1?w=400'] },
@@ -11,5 +11,5 @@ const MOCK_PRODUCTS = [
 ];
 
 export async function GET() {
-  return NextResponse.json({ products: MOCK_PRODUCTS, pagination: { totalEntries: MOCK_PRODUCTS.length } });
+  return NextResponse.json({ products: PRODUCTS });
 }

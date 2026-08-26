@@ -1,25 +1,33 @@
 {
   "name": "@minhtran92/template-gourmet-food",
   "version": "2.0.0",
-  "description": "F&B template for multi-tenant e-commerce platform",
+  "description": "F&B template — giao diện riêng cho shop đồ ăn/thức uống",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "files": ["src"],
   "exports": {
     ".": "./src/index.ts",
-    "./theme": "./src/theme.ts",
-    "./pages/HomePage": "./src/pages/HomePage.tsx",
-    "./config": "./src/config.json"
+    "./theme": "./src/app/theme.ts",
+    "./HomePage": "./src/app/shop/[slug]/HomePage.tsx"
   },
   "scripts": {
-    "dev": "cd sandbox && next dev -p 3001",
-    "build": "cd sandbox && next build"
+    "dev": "next dev -p 3001",
+    "build": "next build"
+  },
+  "dependencies": {
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@tanstack/react-query": "^5.82.0",
+    "lucide-react": "^0.400.0"
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@tanstack/react-query": "^5.82.0"
+    "react-dom": "^19.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

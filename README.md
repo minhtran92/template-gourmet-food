@@ -1,27 +1,46 @@
-# @g66studio/template-gourmet-food
+# template-gourmet-food
 
-F&B (Food & Beverage) template for multi-tenant e-commerce platform.
+F&B template — giao diện riêng cho shop đồ ăn/thức uống.
 
-## Quick Start (Sandbox)
+## Dev (clone là chạy được)
 
 ```bash
 git clone https://github.com/minhtran92/template-gourmet-food.git
 cd template-gourmet-food
 npm install
-cd sandbox && npm install && cd ..
 npm run dev
 ```
 
-Open http://localhost:3001 to see the F&B storefront.
+Mở http://localhost:3001 → F&B storefront với mock data (6 món ăn + đồ uống).
 
-## Structure
+## Cấu trúc
 
-- `src/` — Published package (theme, pages, components)
-- `sandbox/` — Next.js dev app with mock data (NOT published)
+```
+src/
+├── app/                        ← Next.js App Router (dev sandbox)
+│   ├── page.tsx                ← Render HomePage với mock tenant
+│   ├── layout.tsx
+│   ├── globals.css
+│   ├── api/pancake/sandbox/    ← Mock API (products)
+│   │   └── products/route.ts
+│   ├── shop/[slug]/
+│   │   └── HomePage.tsx         ← F&B HomePage (exported)
+│   └── theme.ts                 ← Colors, fonts
+├── config.json                  ← Metadata
+└── index.ts                     ← Package exports
+```
 
-## Template Features
+## Template chỉ chứa giao diện
 
-- F&B-specific HomePage (menu categories + dish cards + hero)
-- Warm coffee/wood color palette
-- Products fetched from `/api/pancake/[slug]/products` (mock in sandbox)
-- All colors from `theme.colors.*` (theme switching changes layout)
+| Trong template | Trong main app (dùng chung) |
+|---|---|
+| HomePage (layout F&B) | Payment (VNPay/MoMo) |
+| ProductCard (style F&B) | Cart logic (Zustand) |
+| HeroBanner (F&B hero) | Checkout flow |
+| ContentPage (layout) | Auth (OTP/OAuth) |
+| Footer (F&B footer) | API client |
+
+## Sửa giao diện
+
+Chỉnh `src/app/shop/[slug]/HomePage.tsx` → `npm run dev` → xem ngay.
+Theme colors: `src/app/theme.ts`.
