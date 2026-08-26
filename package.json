@@ -1,28 +1,25 @@
 {
-  "name": "@g66/template-gourmet-food",
-  "version": "1.0.0",
-  "description": "F&B storefront template for @g66 — warm coffee/wood theme, phone OTP, VNPay/SEPay",
-  "private": true,
+  "name": "@g66studio/template-gourmet-food",
+  "version": "2.0.0",
+  "description": "F&B template for multi-tenant e-commerce platform",
   "type": "module",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": ["src"],
   "exports": {
-    ".": "./index.ts",
-    "./theme": "./theme.ts",
-    "./sdk-config": "./sdk-config.ts",
-    "./pages": "./pages/index.ts",
-    "./components": "./components/index.ts"
+    ".": "./src/index.ts",
+    "./theme": "./src/theme.ts",
+    "./pages/HomePage": "./src/pages/HomePage.tsx",
+    "./config": "./src/config.json"
   },
   "scripts": {
-    "build": "tsc --noEmit",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "@g66/storefront-sdk": "workspace:*",
-    "@g66/core": "workspace:*"
+    "dev": "cd sandbox && next dev -p 3001",
+    "build": "cd sandbox && next build"
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  }
+    "react-dom": "^19.0.0",
+    "@tanstack/react-query": "^5.82.0"
+  },
+  "license": "MIT"
 }
