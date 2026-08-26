@@ -13,7 +13,7 @@ export function HeroBanner({ name, isConfigured, subtitle, theme }: HeroBannerPr
   const c = theme.colors;
   return (
     <div
-      className="relative h-48 md:h-64 flex items-center justify-center"
+      className="relative h-32 md:h-40 flex items-center justify-center"
       style={{
         background: `linear-gradient(135deg, ${c.primary}22, ${c.accent}11)`,
         borderBottom: `3px solid ${c.primary}`,
